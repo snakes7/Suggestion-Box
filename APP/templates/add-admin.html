@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+     <main class="form p-5 m-5">
+      <form method="post">
+          <h1>Add new Site Admin</h1>
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+          {{ form.name.label() }}
+          {{ form.name(class="form-control")}}
+        </div>
+        <div class="mb-3">
+          {{ form.surname.label()}}
+          {{ form.surname(class="form-control")}}
+        </div>
+
+        <div class="mb-3">
+          {{ form.email.label()}}
+          {{ form.email(class="form-control")}}
+        </div>
+        <div class="mb-3">
+          {{ form.username.label()}}
+          {{ form.username(class="form-control")}}
+        </div>
+        <div class="mb-3">
+          {{ form.password.label()}}
+          {{ form.password(class="form-control")}}
+        </div>
+        <div class="mb-3">
+          {{ form.confirm_password.label()}}
+          {{ form.confirm_password(class="form-control")}}
+        </div>
+
+        <div class="checkbox mb-3">
+
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Add</button>
+      </form>
+    </main>
+    </div>
+
+<link rel="stylesheet" href="/static/css/style.css">
+{% endblock %}

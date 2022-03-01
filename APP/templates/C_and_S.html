@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="post" class="p-5 m-5">
+        <h1>Post Anonymously</h1>
+        {{ form.hidden_tag() }}
+      <div class="mb-3 col-auto">
+          {{ form.post_category.label() }}
+          {{ form.post_category(class="form-control") }}
+
+      </div>
+      <div class="mb-3">
+          {{ form.text.label() }}
+          {{ form.text(class="form-control", placeholder="Type content here!")}}
+          {{ form.email.label() }}
+          {{ form.email(class="form-control", placeholder="enter email for feedback")}}
+           <div id="info" class="form-text">Your post will be sent anonymously.</div>
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

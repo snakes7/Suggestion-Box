@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block content %}
+    <div class="container fluid">
+        <h1>View Complaints and Suggestions</h1>
+        <div class="row">
+        </div>
+        {% if posts == [] %}
+            <h4>Nothing to show</h4>
+        {% else %}
+          <table class="table table-secondary table-hover table-stripped">
+            <thead>
+                <th scope="col">S/N</th> <th scope="col">Post</th> <th scope="col">Category</th> <th scope="col">Feedback Email</th> <th scope="col">Date</th>
+            </thead>
+            {% for post in posts %}
+
+            <tbody >
+                <tr>
+                    <td>{{loop.index0 +1 }}</td> <td>{{post.post_content}}</td> <td>{{post.post_category}}</td>
+                    <td>{{post.reply_email}}</td>  <td>{{post.date_created}}</td>
+
+                </tr>
+
+            </tbody>
+
+            {% endfor %}
+        </table>
+
+        {% endif %}
+
+
+    </div>
+
+
+
+<link rel="stylesheet" href="/static/css/style.css">
+{% endblock %}

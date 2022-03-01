@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Dashboard</h1>
+        <div class="row">
+            <p><strong>Current complaints = {{no_of_complaints}}</strong></p>
+            <p><strong>Current suggestions = {{no_of_suggestions}}</strong></p>
+        </div>
+    </div>
+
+    </div>
+
+<link rel="stylesheet" href="/static/css/style.css">
+{% endblock %}

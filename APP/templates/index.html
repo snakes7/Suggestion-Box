@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Welcome to The University Suggestions & Complaints Box</h1>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/static/images/image.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/static/images/image2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/static/images/imagex.jpg" class="d-block w-100" alt="...">
+        </div>
+         <div class="carousel-item">
+          <img src="/static/images/image3.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <p class="fs-4 px-4">
+        Welcome to the University Suggestion box, Here you make all your suggestion and complaint while maintaining anonymity
+        without threat of backlash from the school officials.
+    </p>
+    <div class="row">
+        <h1>Usage Guidelines</h1>
+        <ul class="px-5">
+            <li>Do not Use abusive language.</li>
+            <li>Do not incite anybody or group of people.</li>
+            <li>Do not send a single complain multiple times.</li>
+            <li>Suggestions should be descriptive as possible.</li>
+            <li>State all complains in clear terms.</li>
+        </ul>
+    </div>
+
+<link rel="stylesheet" href="/static/css/style.css">
+{% endblock %}
