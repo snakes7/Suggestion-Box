@@ -23,4 +23,5 @@ login_manager.needs_refresh_message=(u"Session Timed out, Please re-login")
 
 # setting session message category
 login_manager.needs_refresh_message_category="danger"
+
 from APP import views, models

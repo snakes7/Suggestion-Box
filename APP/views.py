@@ -106,9 +106,13 @@ def logout():
     logout_user()
     return redirect(url_for("admin_login_page"))
 
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("404.html")
 
 @app.before_request
 def before_request():
     # sets session time from login to 1 hr
     session.permanent = True
     app.permanent_session_lifetime = timedelta(days=1)
+
