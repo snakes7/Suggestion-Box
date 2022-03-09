@@ -7,7 +7,7 @@
     <main class="form-signin text-center p-5 m-5">
       <form method="post">
         {{ form.hidden_tag() }}
-        <img class="mb-4 text-center" src="/static/images/abu.jpg" alt="" width="72" height="57">
+        <img class="mb-4 text-center" src="{{url_for('static', filename='images/abu.jpg')}}" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div class="mb-3">

@@ -1,4 +1,4 @@
-from APP import app
+from APP import app, db
 from datetime import timedelta
 from flask import flash, session, redirect, render_template, url_for
 from flask_login import login_user, logout_user, login_required
@@ -94,10 +94,23 @@ def download_report():
     pass
 
 
-@app.route("/admin/delete-post")
+@app.route("/admin/review-post/<int:id>")
+def review_post(id):
+    post_to_update = Posts.query.get_or_404(id)
+    post_to_update.post_status="Reviewed"
+    db.session.commit()
+    return redirect(url_for("view_reports_page"))
+
+
+
+@app.route("/admin/delete-post/<int:id>")
 @login_required
-def remove_post():
-    pass
+def remove_post(id):
+    post_to_delete = Posts.query.get_or_404(id)
+    db.session.delete(post_to_delete)
+    db.session.commit()
+    flash("you deleted a post",category="info")
+    return redirect(url_for("view_reports_page"))
 
 
 @app.route("/logout")

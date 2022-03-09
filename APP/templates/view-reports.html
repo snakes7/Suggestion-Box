@@ -12,15 +12,21 @@
         {% else %}
           <table class="table table-secondary table-hover table-stripped">
             <thead>
-                <th scope="col">S/N</th> <th scope="col">Post</th> <th scope="col">Category</th> <th scope="col">Feedback Email</th> <th scope="col">Date</th>
+                <th scope="col">S/N</th> <th scope="col">Post</th> <th scope="col">Category</th>
+                <th scope="col">Feedback Email</th> <th scope="col">Date</th> <th scope="col">Status</th> <th scope="col">Actions</th>
             </thead>
             {% for post in posts %}
 
             <tbody >
                 <tr>
                     <td>{{loop.index0 +1 }}</td> <td>{{post.post_content}}</td> <td>{{post.post_category}}</td>
-                    <td>{{post.reply_email}}</td>  <td>{{post.date_created}}</td>
-
+                    <td>{{post.reply_email}}</td>  <td>{{post.date_created}}</td> <td scope="col">{{post.post_status}}</td>
+                    <td>
+                        {% if post.post_status == "Review in progress" %}
+                            <a href="/admin/review-post/{{post.id}}"><button class="btn btn-success btn-outline">Reviewed</button></a>
+                        {% endif %}
+                        <a href="/admin/delete-post/{{post.id}}"><button class="btn btn-danger btn-outline">delete</button></a>
+                    </td>
                 </tr>
 
             </tbody>

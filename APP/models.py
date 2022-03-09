@@ -32,14 +32,16 @@ class Posts(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     post_category = db.Column(db.String(), nullable=False)
     post_content = db.Column(db.Integer(), nullable=False)
+    post_status = db.Column(db.String(), nullable=False)
     reply_email = db.Column(db.Integer())
-    date_created = db.Column(db.String(), nullable=False)
+    date_created = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
 
-    def __init__(self, category, content, reply_email, date=datetime.now()):
+    def __init__(self, category, content, reply_email):
         self.post_category = category
         self.post_content = content
         self.reply_email = reply_email
-        self.date_created = date
+        self.post_status="Review in progress"
+        self.date_created = datetime.utcnow()
 
 
 @login_manager.user_loader
